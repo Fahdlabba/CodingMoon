@@ -7,10 +7,9 @@ const signUp=require("../Controller/Donateur/signUp")
 const verifyToken=require("../Middleware/verifyToken")
 
 router.post("/login",login)
-router.post("signUp",signUp)
-router.use(verifyToken)
-router.get('/payment',payment)
-router.put("/payment/succes",successPayment)
+router.post("/signUp",signUp)
+router.get('/payment',verifyToken,payment)
+router.get("/payment/succes",successPayment)
 // router.delete('/delete',delete)
 
 module.exports=router

@@ -16,17 +16,33 @@ const farmerSchema=new Schema({
         type :String ,
         require:true
     },
+    name:{
+        type:String,
+        require:true
+    },
     location :{
         type:String,
         require:true,
     },
     beehiveNumber:{
         type:Number,
-        require:true
+        require:true,
+        default:0
+    },
+    hornetNumber:{
+        type:Number,
+        require:true,
+        default:0
+    },
+    subscriptionType:{
+        type:String,
+        require:true,
+        default:"",
     },
     hasSensor:{
         type:Number,
-        require:true
+        require:true,
+        default:0
     }
 
 })
@@ -35,6 +51,10 @@ const donateurSchema=new Schema({
         type:String,
         require :true,
     },
+    name:{
+        type:String,
+        require:true
+    },
     pswd:{
         type :String ,
         require:true
@@ -42,6 +62,7 @@ const donateurSchema=new Schema({
     donationAmount:{
         type:Number,
         require:true,
+        default:0
     },
     donationHistory:[donation]
 })

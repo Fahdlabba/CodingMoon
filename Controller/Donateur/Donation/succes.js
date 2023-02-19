@@ -5,8 +5,9 @@ const succesPayment=(req,res)=>{
     const date=Date();
     Donateur.updateOne(
         {mail:mail},
-        {$push:{donationHistory:[{date}]}},
-        {$inc:{donationAmount:5}},
+        {
+            $push:{donationHistory:[{date}]},
+            $inc:{donationAmount:5}},
         (err,result)=>{
             if(err) console.log(err)
         }

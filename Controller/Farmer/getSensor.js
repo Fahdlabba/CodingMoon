@@ -10,7 +10,7 @@ const giveFarmerSensor=async (req,res)=>{
             for(let j=0;j=i;j++){
                 await updateOne(
                     {mail:donateur[j].mail},
-                    {$inc :{donationAmount:-(donateur[j].donationAmount)}},
+                    {$set :{donationAmount:0}},
                     (err,result)=>{
                         if(err) console.log(err)
                     }
@@ -32,5 +32,7 @@ const giveFarmerSensor=async (req,res)=>{
         collectedAmount-=1000;
         index++;
     }
+    res.json({msg:"Sensor generated to farmer successfully ! "})
+
 }
 module.exports=giveFarmerSensor
