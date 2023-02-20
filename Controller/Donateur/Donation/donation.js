@@ -9,7 +9,7 @@ const payment=async (req,res)=>{
                 price_data:{
                     currency:'usd',
                     product_data:{
-                        name:"Bees"
+                        name:"Bee The Change ! "
                     },
                     unit_amount:500,
                 },
